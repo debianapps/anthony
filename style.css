@@ -1,0 +1,110 @@
+/* --- Hide site content by default --- */
+#bg-video, .entered {
+  display: none;
+}
+
+/* Background video */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  background: black;
+}
+
+/* Center everything */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Monaspace Neon', 'VCR OSD Mono', monospace;
+  color: white;
+  overflow: hidden;
+  background-color: #121212; /* Fallback background for while Turnstile loads */
+}
+
+/* Center box content */
+.box-contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main content box styling */
+.box-brrr {
+  background: rgba(10, 10, 10, 0.25); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Glowing username */
+.box-brrr h3 {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+/* --- UPDATED Turnstile screen overlay --- */
+#turnstile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #121212; /* Solid background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: default;
+  transition: opacity 1s ease;
+  z-index: 10;
+}
+
+#turnstile-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Profile picture styling */
+.pfp {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  background-color: rgba(60, 60, 60, 0.5);
+}
+
+/* Remove all underlines/borders from links and images */
+a {
+  text-decoration: none;
+  border: none;
+}
+
+a img {
+  border: none;
+  transition: filter 0.3s ease;
+}
+
+/* Glowing icon on hover */
+a img:hover {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+}
+
+/* Remove text selection highlight */
+::selection {
+  background: transparent;
+}
+::-moz-selection { /* For Firefox */
+  background: transparent;
+}

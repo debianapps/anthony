@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>anthony</title>
+  <meta property="og:title" content="skidworld.lol" />
+  <meta property="og:description" content="dont ddos me my mom will get mad" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://skidworld.lol" />
+  <link href="https://fonts.cdnfonts.com/css/vcr-os-mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/monaspace-neon/index.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+
+  <div id="turnstile-overlay">
+    <div class="cf-turnstile" data-sitekey="0x4AAAAAAB-MPF_al473ygiy" data-callback="onSuccess" data-theme="dark"></div>
+  </div>
+ 
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="background.mp4" type="video/mp4">
+    your browser is too old to play videos god.
+  </video>
+
+  <div class="entered">
+    <div class="box-contain">
+      <div class="box-brrr">
+        <img src="ant.png" class="pfp" alt="pfp ant"/>
+        <h3><span style="color: rgba(255, 0, 0, 0.973);">• </span>anthony</h3>
+        <p>awesome sauce</p>
+        <p style="font-size:18px;">- socials -</p>
+        <a href="https://discord.com/users/160503556544266241" target="_blank" rel="noopener noreferrer">
+          <img src="discord.png" alt="Discord" height="30">
+        </a>
+        <a href="https://t.me/weakjoke" target="_blank" rel="noopener noreferrer">
+          <img src="telegram.png" alt="Telegram" height="30">
+        </a>
+        <a href="https://doxbin.com/user/user8185481" target="_blank" rel="noopener noreferrer">
+          <img src="doxbin.png" alt="Doxbin" height="30">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <audio loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function onSuccess() {
+      const overlay = document.querySelector('#turnstile-overlay');
+      const video = document.querySelector('#bg-video');
+      const enteredContent = document.querySelector('.entered');
+      const audio = document.querySelector('audio');
+
+      // Make the site visible
+      video.style.display = 'block';
+      enteredContent.style.display = 'block';
+
+      // Start audio and fade out overlay
+      audio.volume = 0.5;
+      audio.play();
+      overlay.classList.add('fade-out');
+      
+      overlay.addEventListener('transitionend', () => {
+        overlay.style.display = 'none';
+      });
+    }
+  </script>
+</body>
+</html>
