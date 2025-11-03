@@ -1,5 +1,5 @@
 /* --- Hide site content by default --- */
-#bg-video, .entered {
+.entered {
   display: none;
 }
 
@@ -14,7 +14,6 @@
   z-index: -1;
   background: black;
 }
-
 /* Center everything */
 body {
   margin: 0;
